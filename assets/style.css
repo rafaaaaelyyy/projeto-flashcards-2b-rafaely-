@@ -1,0 +1,94 @@
+:root {
+    --text-color: #ffffff;
+    --card-front-color: #2c3e50;
+    --card-back-color: #27ae60;
+    --font-main: Arial, sans-serif;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center fixed;
+    background-size: cover;
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 2rem;
+}
+
+.cartao {
+    background-color: transparent;
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 4rem);
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.cartao__conteudo {
+    background-color: var(--card-front-color);
+    height: 100%;
+    color: var(--text-color);
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+    border-radius: 10px;
+}
+
+.cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo h3 {
+    margin: 0.6rem;
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+    font-size: 1.1rem;
+    border-radius: 0.6rem;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+    background-color: var(--card-back-color);
+    color: #000;
+    font-weight: bold;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+}
+
