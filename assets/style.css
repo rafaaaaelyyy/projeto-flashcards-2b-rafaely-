@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center fixed;
+    background: url(image.png) no-repeat center center fixed;
     background-size: cover;
     font-family: var(--font-main);
     margin: 0;
